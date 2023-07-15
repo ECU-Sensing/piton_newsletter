@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ .Campaign.Subject }}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+        <base target="_blank">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,200;1,500&display=swap');
+
+            :root {
+                --bg-color: #53389E;
+                --primary-color: #BCA7EB;
+                --accent-color: #8258DE;
+                --text-color: #F5F1FE;
+                --button-color: #31205F;
+
+            }
+            body {
+                background-color: #F0F1F3;
+                font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, sans-serif;
+                font-size: 15px;
+                line-height: 26px;
+                margin: 0;
+                color: #444;
+            }
+
+            pre {
+                background: #f4f4f4f4;
+                padding: 2px;
+            }
+
+            table {
+                width: 100%;
+                border: 1px solid #ddd;
+            }
+            table td {
+                border-color: #ddd;
+                padding: 5px;
+            }
+
+            .wrap {
+                background-color: #fff;
+                padding: 0px;
+                max-width: 598px;
+                margin: 0 auto;
+                border-radius: 5px;
+            }
+
+            .button {
+                background: #0055d4;
+                border-radius: 3px;
+                text-decoration: none !important;
+                color: #fff !important;
+                font-weight: bold;
+                padding: 0px 0px;
+                display: inline-block;
+            }
+            .button:hover {
+                background: #111;
+            }
+
+            .footer {
+                text-align: center;
+                font-size: 12px;
+                color: #888;
+            }
+                .footer a {
+                    color: #888;
+                    margin-right: 5px;
+                }
+
+            .gutter {
+                padding: 0px;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            a {
+                color: #0055d4;
+            }
+                a:hover {
+                    color: #111;
+                }
+            @media screen and (max-width: 600px) {
+                .wrap {
+                    max-width: auto;
+                }
+                .gutter {
+                    padding: 0px;
+                }
+            }
+            .header{
+                width: 100%;
+                height: auto;
+            }
+            .header-icon{
+                width:auto;
+                height:auto;
+                max-width: 598px;
+            }
+            .footer-content{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: auto;          
+                height: auto;
+                font-family: 'Montserrat', sans-serif;
+                background-color: var(--bg-color);
+                border-radius: 5px;
+
+            }
+
+
+            .footer-icon {
+                max-width: 232px;
+                max-height: 113px;
+                padding: 15px;
+            }
+
+            .footer-text{
+                margin: 0;
+                display: flex;
+                align-items: center;
+            }
+
+            .footer-buttons {
+                background-color: var(--accent-color);
+                font-family: 'Montserrat', sans-serif;
+                font-size: 20px;
+                color: white;
+                border: none;
+                border-radius: 10px;
+                padding: 10px 24px;
+                margin-right: 20px;
+
+            }
+
+            .footer .menu-ico,
+            .footer .close-ico {
+                display: none;
+            }
+
+            .footer-navigation {
+                display: flex;
+                flex-direction: column;
+                gap: 0px;
+                align-items: left;
+                margin-top:2vh;
+            }
+
+            .footer-navigation a{
+                text-decoration: none;
+                color: #F5F1FE;
+                font-size: 11px;
+                font-weight: 500;
+            }
+
+            .footer-navigation-title {
+                color: #F5F1FE;
+                font-size: 22px;
+                font-weight: 450;
+                margin-left: 10px;
+                align-content: left;
+                margin-bottom: 5px;
+            }
+
+            .footer-location {
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                width: auto;
+                margin-left: 25px;
+            }
+
+            .footer-location-title {
+                color: #F5F1FE;
+                font-size: 11px;
+                font-weight: 400;
+                align-content: left;
+                margin-bottom: 0px;
+                margin-top: 35px;
+            }
+
+            .footer-location-text {
+                color: #F5F1FE;
+                font-size: 9px;
+                font-weight: 400;
+                margin-top: 6px;
+                line-height: 12px;
+            }
+
+            .menus {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: top;
+                width: auto;          
+                height: auto;
+                margin: 0 auto;
+                font-family: 'Montserrat', sans-serif;
+                background-color: var(--button-color);
+            }
+
+            .nav-and-nav {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: auto;         
+                height: auto;
+                font-family: 'Montserrat', sans-serif;
+                margin-right: 20px;
+                margin-lefT: 20px;
+            }
+
+            .community {
+                font-family: 'Montserrat', sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
+            .community-title{
+                color:#53389E;
+                font-size: 25px;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            .community-button {
+                background-color: var(--bg-color);
+                font-family: 'Montserrat', sans-serif;
+                font-size: 15px;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                padding: 10px 50px;
+                align-content: center;
+                margin-bottom: 40px;
+            }
+        </style>
+    </head>
+<body style="background-color: #F0F1F3;font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, sans-serif;font-size: 15px;line-height: 26px;margin: 0;color: #444;">
+    <div class="gutter" style="padding: 30px;">&nbsp;</div>
+    <div class="wrap" >
+        <!--{{ template "content" . }}-->
+        <div class="header">
+            <object class="header-icon" data="images/Header.png" >
+                <!-- Fallback content goes here -->
+                <img src="images/white_logo.png" alt="Description of image">
+            </object>
+        </div>
+        <div class="spotlight">
+            <object class="header-icon" data="images/Spotlight.png" >
+                <!-- Fallback content goes here -->
+                <img src="images/white_logo.png" alt="Description of image">
+            </object>
+        </div>
+        <div class="news">
+            <object class="header-icon" data="images/NewsArticles.png" >
+                <!-- Fallback content goes here -->
+                <img src="images/white_logo.png" alt="Description of image">
+            </object>
+        </div>
+        <div class="research">
+            <object class="header-icon" data="images/ResearchSpotlight.png" >
+                <!-- Fallback content goes here -->
+                <img src="images/white_logo.png" alt="Description of image">
+            </object>
+        </div>
+        <div class="community">
+            <h2 class="community-title"><i>Interested in our community?</i></h2>
+            <a href="https://community.iotei.org/"><button class="community-button">Join the Conversation</button></a>
+        </div>
+        <div class="footer-content">
+            <object class="footer-icon" data="images/white_logo.png" >
+                <!-- Fallback content goes here -->
+                <img src="images/white_logo.png" alt="Description of image">
+            </object>
+            <div class="footer-location">
+                    <p class="footer-location-title"><strong>admin@iotei.org</strong></p>
+                    <p class="footer-location-text">College of Engineering and Technology Science and Technology Bldg, Rm. C-116
+                        East Carolina University Greenville, NC 27858-4353
+                        </p>
+            </div>
+            <div class="nav-and-nav">
+                <div class="footer-explore">
+                    <nav class="footer-navigation">
+                        <a href="https://iotei.org"><strong>Homepage</strong></a>
+                        <a href="https://piton.cloud"><strong>PITON</strong></a>
+                        <a href="https://community.iotei.org"><strong>Community</strong></a>
+                        <a href="https://grafana.iotei.org"><strong>Grafana</strong></a>
+                    </nav>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer" style="text-align: center;font-size: 12px;color: #888;">
+        <p>
+            {{ L.T "email.unsubHelp" }}
+            <a href="{{ UnsubscribeURL }}" style="color: #888;">{{ L.T "email.unsub" }}</a>
+            <a href="{{ MessageURL }}" style="color: #888;">{{ L.T "email.viewInBrowser" }}</a>
+        </p>
+        <p>{{ L.T "public.poweredBy" }} <a href="https://listmonk.app" target="_blank" style="color: #888;">listmonk</a></p>
+    </div>
+    <div class="gutter" style="padding: 30px;">&nbsp;{{ TrackView }}</div>
+</body>
+</html>
